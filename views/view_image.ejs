@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>view</title>
+</head>
+<body>
+	<h1>view table</h1>
+<table>
+	<thead>
+		<tr>
+		<th>SN</th>
+		<th>name</th>
+		<th>image</th>
+		<th>driver_image</th>
+		<th>operations</th>
+		</tr>
+
+	</thead>
+	<% var i =1; data.forEach(function(obj){%>
+	<tr>
+		<td>
+		<%= i %>	
+		</td>
+		<td><%= obj.name %></td>
+		<td> <% if(obj.image) {%>
+          <img src="uploads/<%= (obj.image) %>" height="50px" width="50px" style="border-radius:50px;"><% } else { %>
+          <img src="default_image.png" height="50px" width="50px" style="border-radius:50px;opacity:0.3;"><% } %> </td>
+		<td><%= obj.driver_image %></td>
+		<td><a href="/update/<%=obj.id %> "> <button type="button" class="btn btn-secondary"><i class="fa fa-pencil-square-o"></i>edit</button></a></td>
+<td><a href="/delete/<%=obj.id%>"></a><button type="button" class="btn btn-danger "><i class="fa fa-trash"></i> delete</button>
+
+</td>
+	</tr>
+	<% i++; %>
+	<%})%>
+</table>
+</body>
+</html>

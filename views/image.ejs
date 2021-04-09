@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title> Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<form  enctype   =  "multipart/form-data" action="/add"  method="post">
+	<h1>hi</h1>
+	name<input type="text" name="name" value="" class="form-control"><br>
+  image  
+  <input type="file" class="custom-file-input"  name="image" >
+<br>
+  
+  profile picture
+  <input type="file"  class="custom-file-input"  name="driver_image">
+    <br>
+
+
+    <input type="checkbox"  class="chk" name="check[0]" value="2" id="test"/> I agree the conditions
+    <input type="hidden"  class="chk" name="check[0]" value="1" id="test"/>
+    <br>
+    <input type="submit" value="submit">
+</form>
+<script type="text/javascript">
+// $('#test').click(function() {
+//     alert("Checkbox state (method 1) = " + $('#test').prop('checked'));
+//      alert("Checkbox state (method 2) = " + $('#test').is(':checked'));
+// });
+
+// $(document).ready(function () {
+// 	$('#test').click(function () {
+// 		var box = [];
+// 		$.each($("input[type='checkbox']:checked"), function () {
+
+// 			box.push($(this).val());
+// 		});
+// 		alert(box);
+// 	});
+// });
+$(document).ready(function () {
+        $('#test').click(function () {
+            $('.chk').each(function () {
+            	
+              
+               
+            });
+        });
+    });
+</script>
+</body>
+</html>

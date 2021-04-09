@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title> Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<form action="/update/<%=id%>"  method="post">
+	<h1>hi</h1>
+	name<input type="text" name="name" class="form-control" value="<%=name %>"><br>
+
+  image  <input type="file"  name="image" class="" id="pic" > <br>
+  
+  <div id="file-upload" ><%=image %></div>
+  <h1>2nssss</h1>
+ driver_image  <input type="file"  name="driver_image" id="driver" class="form-control"   >
+    
+  <div id="file-upload1" ><%=driver_image %></div>
+<!-- 
+
+          <div  style="color:red;" value="<%=image %>"></div> -->
+    <input type="submit" value="submit">
+</form>
+<script>
+
+
+
+// 	var fullPath = document.getElementById('pic').value;
+// if (fullPath) {
+//     var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+//     var filename = fullPath.substring(startIndex);
+//     if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+//         filename = filename.substring(1);
+//     }
+//     //alert(filename);
+// }
+// document.getElementById('file-upload').innerHTML=filename;
+
+$(document).ready(function(){
+        $(' input[name="image"]').change(function(e){
+            var fileName = e.target.files[0].name;
+$("#file-upload").html(fileName);
+            alert( fileName   );
+
+        });
+
+           $('input[name="driver_image"]').change(function(e){
+            var fileName = e.target.files[0].name;
+$("#file-upload1").html(fileName);
+            alert( fileName   );
+
+        });
+
+    });
+
+
+</script>
+</body>
+</html>
